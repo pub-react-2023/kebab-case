@@ -2,17 +2,33 @@
   font-family: "Google Sans", sans-serif;
 }
 
+h1 {
+  margin: 0;
+}
+
+header {
+  display: flex;
+  gap: 16px;
+
+  > label {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+}
+
 table {
   border-collapse: collapse;
 
   & th,
   td {
     border: 1px solid;
+    padding: 4px 8px;
   }
 }
 
-form {
-  background-color: #ddd;
+.card {
+  background-color: #eee;
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -25,6 +41,11 @@ form {
     flex-direction: column;
     gap: 8px;
   }
+
+  > div:last-child {
+    display: flex;
+    justify-content: space-between;
+  }
 }
 
 .dialog {
@@ -32,5 +53,30 @@ form {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  box-shadow: 0 0 16px #0008;
+  box-shadow: 0 0 16px #0004;
+}
+
+button {
+  cursor: pointer;
+
+  &:has(> svg) {
+    font-size: large;
+    background-color: transparent;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+
+    &:hover {
+      background-color: #0002;
+    }
+  }
+}
+
+.dialog > button:first-child {
+  position: absolute;
+  right: 24px;
 }
